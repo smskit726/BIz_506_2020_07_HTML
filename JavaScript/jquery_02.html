@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    $(function(){
+        // div tag의 css 속성을 JQ를 사용하여 변경하기
+        $("div").css("background-color","goldenrod");
+        $("div").text("Korea");
+        $("div").css("height", "30px");
+        $("div").css("margin", "10px");
+
+        // toggle : 클릭할때마다 상태가 반전이 반복되는 코드
+        var sw = -1
+        $("div").click(function(){
+            if(sw>0){
+                $(this).removeClass("divs_mb") // lg style class 삭제
+                $(this).addClass("divs_lg") // mb style class 추가
+            } else {
+                $(this).removeClass("divs_lg") // mb style class 삭제
+                $(this).addClass("divs_mb") // lg style class 추가
+            }
+            sw*=-1; // -1, 1, -1 계속 반복
+            
+        })
+})
+    </script>
+
+    <style>
+        .divs_lg {
+            background-color: lightgreen;
+            color: lightsalmon;
+        }
+
+        .divs_mb {
+            background-color: midnightblue;
+            color: powderblue;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
